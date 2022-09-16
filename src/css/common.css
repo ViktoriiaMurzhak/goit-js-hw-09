@@ -16,3 +16,47 @@ img {
   display: block;
   max-width: 100%;
 }
+
+#datetime-picker {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  width: 70px;
+  height: 30px;
+  padding: 0 0 0 0;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.value {
+  font-size: 30px;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #0d7e5a;
+}
