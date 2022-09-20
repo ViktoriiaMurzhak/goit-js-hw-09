@@ -35,22 +35,27 @@ el.start.addEventListener('click', onStart);
 
 function onStart() {
   el.start.disabled = ' ';
-
   intervalId = setInterval(() => {
-    const { daysSpan, hoursSpan, minutesSpan, secondsSpan } = el;
+    makeSpan();
 
     const msResult = choiceData.selectedDates[0] - Date.now();
-
-    const { days, hours, minutes, seconds } = convertMs(msResult);
-    daysSpan.textContent = days;
-    hoursSpan.textContent = hours;
-    minutesSpan.textContent = minutes;
-    secondsSpan.textContent = seconds;
 
     if (msResult <= 1000) {
       clearInterval(intervalId);
     }
   }, 1000);
+}
+
+function makeSpan() {
+  const { daysSpan, hoursSpan, minutesSpan, secondsSpan } = el;
+
+  const msResult = choiceData.selectedDates[0] - Date.now();
+
+  const { days, hours, minutes, seconds } = convertMs(msResult);
+  daysSpan.textContent = days;
+  hoursSpan.textContent = hours;
+  minutesSpan.textContent = minutes;
+  secondsSpan.textContent = seconds;
 }
 
 function addLeadingZero(value) {
